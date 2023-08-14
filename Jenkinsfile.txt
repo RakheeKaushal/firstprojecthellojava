@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 pipeline {
     agent any
     stages {
@@ -38,45 +38,5 @@ pipeline {
         
 		// ******ALL CODE TO BE ADDED ABOVE THIS COMMENT******
     }
-=======
-pipeline {
-    agent any
-    stages {
-		
-		
-		// ******ALL CODE TO BE ADDED BELOW THIS COMMENT******
-		
-		//Clean stage
-        stage('Clean') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
-		//Clean stage End
-		
-        //Code starts for stage Compile
-		stage('Compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
-		//Code ends for Compile
- //Code starts for stage Code Analysis
-		stage('Code Analysis') {
-            steps {
-			 script {
-                    scannerHome = tool 'sonarscanner'
-                    }
-				withSonarQubeEnv('SonarServer')
-				{
-				sh "${scannerHome}/bin/sonar-scanner"
-				}
-			}
-		}
-		//Code ends for stage Code Analysis
 
-        
-		// ******ALL CODE TO BE ADDED ABOVE THIS COMMENT******
-    }
->>>>>>> 7a99fb9f4b43adb24c5dc0e3b652353990ef230a
 }
