@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -21,7 +20,8 @@ pipeline {
             }
         }
 		//Code ends for Compile
- //Code starts for stage Code Analysis
+
+        //Code starts for stage Code Analysis
 		stage('Code Analysis') {
             steps {
 			 script {
@@ -35,8 +35,8 @@ pipeline {
 		}
 		//Code ends for stage Code Analysis
 
-        
+		
+
 		// ******ALL CODE TO BE ADDED ABOVE THIS COMMENT******
     }
-
 }
